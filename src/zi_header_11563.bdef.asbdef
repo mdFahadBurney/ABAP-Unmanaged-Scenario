@@ -1,0 +1,115 @@
+unmanaged implementation in class zbp_i_header_11563 unique;
+strict ( 2 );
+
+define behavior for ZI_HEADER_11563 alias _header
+//late numbering
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+  mapping for ztm_head_11563
+    {
+//    Every Field will have CONTROL STRUCTURE ASSOCIATED
+      Docno = docno;
+      CompCd    = comp_cd;
+      PurchOrg    = purch_org;
+      Currency       = currency;
+      Status         = status;
+      SupplierNo = supplier_no;
+      Changed_At      = changed_at;
+      Created_At      = created_at;
+      Created_By      = created_by;
+      LocalLastChangedAt = locallastchangedat;
+    }
+  field ( readonly ) Docno;
+  field ( mandatory ) SupplierNo;
+
+  association _item { create; }
+  association _address { create; }
+
+action( features : instance ) status result [1] $self;
+action( features : instance ) reject result [1] $self;
+//action
+
+}
+
+define behavior for ZI_ITEM_11563 //alias <alias_name>
+//late numbering
+lock dependent by _header
+authorization dependent by _header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( mandatory: create )ItemNo;
+  field ( readonly ) Docno;
+
+
+  mapping for ztd_items_11563
+    {
+      Docno = docno;
+      ItemNo     = item_no;
+      Status         = status;
+      Quantity       = quantity;
+      Currency       = currency;
+      Item_Amt         = item_amt;
+      Tax_Amt      = tax_amt;
+      Changed_At      = changed_at;
+      Created_At      = created_at;
+      Created_By      = created_by;
+    }
+     association _header;
+}
+
+define behavior for ZI_ADDRESS_11563 //alias <alias_name>
+//late numbering
+lock dependent by _header
+authorization dependent by _header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( mandatory: create )AddressNo;
+  field ( readonly ) Docno;
+
+
+  mapping for ztm_addr_11563
+    {
+      Docno = docno;
+      AddressNo     = address_no;
+     Name     = name ;
+     StreetAddr       = street_addr;
+     City         = city;
+      Country      = country;
+     Status     = status;
+//      Created_At      = created_at;
+//      Created_By      = created_by;
+
+
+//        key client     : abap.clnt not null;
+//  @AbapCatalog.foreignKey.screenCheck : true
+//  key docno      : ztdocno_dt not null
+//    with foreign key [1,1] ztm_head_11563
+//      where client = ztm_addr_11563.client
+//        and docno = ztm_addr_11563.docno;
+//  key address_no : ztaddress_no not null;
+//  name           : ztname_dt;
+//  street_addr    : ztstreet_addr;
+//  city           : ztcity_dt;
+//  country        : ztcountry_dt;
+//  status         : ztstatus_st;
+//
+//    key Docno,
+//    key AddressNo,
+//    Name,
+//    StreetAddr,
+//    City,
+//    Country,
+//    Status,
+
+    }
+     association _header;
+}

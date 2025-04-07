@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Custom Entity'
+define service ZSD_HEAD_11563 {
+  expose ZFB_CUSTOM_ENTITY as Custom;
+}

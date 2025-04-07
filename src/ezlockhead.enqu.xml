@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENQU" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD25V>
+    <VIEWNAME>EZLOCKHEAD</VIEWNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <AGGTYPE>E</AGGTYPE>
+    <ROOTTAB>ZTM_HEAD_11563</ROOTTAB>
+    <DDTEXT>Lock Object for Header Table</DDTEXT>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </DD25V>
+   <DD26E_TABLE>
+    <DD26E>
+     <VIEWNAME>EZLOCKHEAD</VIEWNAME>
+     <TABNAME>ZTM_HEAD_11563</TABNAME>
+     <TABPOS>0001</TABPOS>
+     <FORTABNAME>ZTM_HEAD_11563</FORTABNAME>
+     <ENQMODE>E</ENQMODE>
+    </DD26E>
+   </DD26E_TABLE>
+   <DD27P_TABLE>
+    <DD27P>
+     <VIEWNAME>EZLOCKHEAD</VIEWNAME>
+     <OBJPOS>0001</OBJPOS>
+     <VIEWFIELD>CLIENT</VIEWFIELD>
+     <TABNAME>ZTM_HEAD_11563</TABNAME>
+     <FIELDNAME>CLIENT</FIELDNAME>
+     <KEYFLAG>X</KEYFLAG>
+     <ENQMODE>E</ENQMODE>
+    </DD27P>
+    <DD27P>
+     <VIEWNAME>EZLOCKHEAD</VIEWNAME>
+     <OBJPOS>0002</OBJPOS>
+     <VIEWFIELD>DOCNO</VIEWFIELD>
+     <TABNAME>ZTM_HEAD_11563</TABNAME>
+     <FIELDNAME>DOCNO</FIELDNAME>
+     <KEYFLAG>X</KEYFLAG>
+     <ENQMODE>E</ENQMODE>
+     <LOWERCASE>X</LOWERCASE>
+    </DD27P>
+   </DD27P_TABLE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

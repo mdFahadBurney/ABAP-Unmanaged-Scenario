@@ -1,0 +1,171 @@
+    @Metadata.layer: #CORE
+@UI: {headerInfo: {  typeName: 'Header', typeNamePlural: 'Headers', title: {
+            type: #STANDARD,
+            label: 'Header',
+            value: 'Docno'
+        }
+    }
+}
+annotate view ZC_HEADER_11563
+    with 
+{
+ @UI.facet: [
+            {
+                id: 'HeaderInfo',
+                purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE,
+                label: 'Header Info',
+                position: 10
+            },
+            {
+                id: 'Items',
+                type: #LINEITEM_REFERENCE,
+                label: 'Item Info',
+                position: 20,
+                targetElement: '_item'
+            },
+            { 
+              id: 'Address',
+                type: #LINEITEM_REFERENCE,
+                label: 'Address Info',
+                position: 30,
+                targetElement: '_address'
+            }
+        ]
+
+ @UI : { 
+            identification: [ 
+                { position: 10, label: 'Document Number',importance: #HIGH }
+//                ,
+//                { type  : #FOR_ACTION, dataAction : 'status',label : 'Approved' } 
+            ],
+            lineItem: [   { position: 10,importance : #HIGH },
+            { type : #FOR_ACTION,dataAction: 'status',label : 'Approved' },
+            { type : #FOR_ACTION,dataAction: 'reject',label : 'Reject' }
+             ],
+            selectionField: [ 
+                { position: 10 } 
+            ]
+        }
+    
+    
+        Docno;
+
+        @UI : { 
+            identification: [ 
+                { position: 11, label: 'Company Code' } 
+            ],
+            lineItem: [ 
+                { position: 11 } 
+            ],
+            selectionField: [ 
+                { position: 11 } 
+            ]
+        }
+        CompCd;
+
+        @UI : { 
+            identification: [ 
+                { position: 12, label: 'Purchasing Organization' } 
+            ],
+            lineItem: [ 
+                { position: 12 } 
+            ],
+            selectionField: [ 
+                { position: 12 } 
+            ]
+        }
+        PurchOrg;
+
+        @UI : { 
+            identification: [ 
+                { position: 13, label: 'Currency Code' } 
+            ],
+            lineItem: [ 
+                { position: 13 } 
+            ],
+            selectionField: [ 
+                { position: 13 } 
+            ]
+        }
+        Currency;
+
+        @UI : { 
+            identification: [ 
+                { position: 14, label: 'Supplier Number' } 
+            ],
+            lineItem: [ 
+                { position: 14 } 
+            ],
+            selectionField: [ 
+                { position: 14 } 
+            ]
+        }
+        SupplierNo;
+
+        @UI : { 
+            identification: [ 
+                { position: 15, label: 'Status' } 
+            ],
+            lineItem: [ 
+                { position: 15 } 
+            ],
+            selectionField: [ 
+                { position: 15 } 
+            ]
+        }
+     
+        Status;
+
+        @UI : { 
+            identification: [ 
+                { position: 15, label: 'Changed At' } 
+            ],
+            lineItem: [ 
+                { position: 15 } 
+            ],
+            selectionField: [ 
+                { position: 15 } 
+            ]
+        }
+        Changed_At;
+
+        @UI : { 
+            identification: [ 
+                { position: 16, label: 'Created At' } 
+            ],
+            lineItem: [ 
+                { position: 16 } 
+            ],
+            selectionField: [ 
+                { position: 16 } 
+            ]
+        }
+        Created_At;
+
+        @UI : { 
+            identification: [ 
+                { position: 17, label: 'Created By' } 
+            ],
+            lineItem: [ 
+                { position: 17 } 
+            ],
+            selectionField: [ 
+                { position: 17 } 
+            ]
+        }
+        Created_By;
+           @UI : { 
+            identification: [ 
+                { position: 18, label: 'LocalLastChangedAt' } 
+            ],
+            lineItem: [ 
+                { position: 18 } 
+            ],
+            selectionField: [ 
+                { position: 18 } 
+            ]
+        }
+        LocalLastChangedAt;
+    
+}
